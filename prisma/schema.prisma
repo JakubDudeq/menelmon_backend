@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  password String
+  email    String @unique
+}
+
+model GameHistory {
+  id             Int      @id @default(autoincrement())
+  playedAt       DateTime @default(now())
+  result         Boolean  @default(false)
+  alreadyPlaying Boolean  @default(true)
+  hp1            Int      @default(100)
+  hp2            Int      @default(100)
+  atk1           Int      @default(10)
+  atk2           Int      @default(10)
+  def1           Int      @default(10)
+  def2           Int      @default(10)
+  speed1         Int      @default(10)
+  speed2         Int      @default(10)
+}

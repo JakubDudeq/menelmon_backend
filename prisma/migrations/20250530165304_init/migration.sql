@@ -1,0 +1,17 @@
+-- CreateTable
+CREATE TABLE `GameHistory` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `playedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `result` BOOLEAN NOT NULL,
+    `alreadyPlaying` BOOLEAN NOT NULL,
+    `hp1` INTEGER NOT NULL,
+    `hp2` INTEGER NOT NULL,
+    `atk1` INTEGER NOT NULL,
+    `atk2` INTEGER NOT NULL,
+    `def1` INTEGER NOT NULL,
+    `def2` INTEGER NOT NULL,
+    `speed1` INTEGER NOT NULL,
+    `speed2` INTEGER NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
